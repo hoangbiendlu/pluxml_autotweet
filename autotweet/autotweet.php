@@ -1,5 +1,5 @@
 <?php
-require_once 'tmhOAuth.php';
+require_once __DIR__.'/tmhOAuth.php';
 
 class autotweet extends plxPlugin {
 
@@ -15,30 +15,26 @@ class autotweet extends plxPlugin {
     }
 
     public function hook_plxAdminEditArticle() {
-
         $consumer_key = $this->getParam('consumer_key');
         $consumer_secret = $this->getParam('consumer_secret');
         $user_token = $this->getParam('user_token');
         $user_secret = $this->getParam('user_secret');
 
-        $tmhOAuth = new tmhOAuth(array(
-                                       'consumer_key' => $this->getParam('consumer_key'),
-                                       'consumer_secret' => $this->getParam('consumer_secret'),
-                                       'user_token' => $this->getParam('user_token'),
-                                       'user_secret' => $this->getParam('user_secret')
-                                       ));
-
         if (isset($_POST['publish'])) { // Si c'est un insert
-            
-            $tag = str_replace(',', ' #', $_POST['tags']);
-        	
-        	$url = "http://".$_SERVER['HTTP_HOST']."/article" . (int)$_POST['artId'] . "/" . $_POST['url'];
-        	$message = $_POST['title'] . ' ' . $url .  ' #' . trim(str_replace('# ', '#', $tag));
+            echo "<?php autotweet::tweet('$consumer_key', '$consumer_secret', '$user_token', '$user_secret', \$content); ?>";
+        }
+    }
 
-            $tmhOAuth->request('POST', $tmhOAuth->url('1/statuses/update'), 
-                               array('status' => $message));
-
-        } 
+    public static function tweet($consumer_key, $consumer_secret, $user_token, $user_secret, $content) {
+        $tmhOAuth = new tmhOAuth(compact('consumer_key', 'consumer_secret', 'user_token', 'user_secret'));
+        $url = plxAdmin::getInstance()->aConf['racine'] . $content['url'];
+        $tag = explode(',', $content['tags']);
+        foreach($tag as &$t) {
+            $t = '#' . preg_replace('/[^a-zA-Z]/', '', $t);
+        }
+        $message = $content['title'] . ' ' . $url . ' ' . implode(' ', $tag);
+        $tmhOAuth->request('POST', $tmhOAuth->url('1/statuses/update'), 
+                           array('status' => $message));
     }
 
 }

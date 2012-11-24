@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <document>
-	<parameter name="consumer_key" type="string">wCxSDCOdKkd2KiHy4HXwwQ</parameter>
-	<parameter name="consumer_secret" type="string">ZiBMBRcKpqEdvvKJKnQmUSg9oFWBoK4nemq6NcVI</parameter>
-	<parameter name="user_token" type="string">967679814-dUJbccMbPOBtnddsDwxyYKTnojTHqBNvsJLOMPSH</parameter>
-	<parameter name="user_secret" type="string">FgYvLjWXXTM2RSeM9n2FL9bovyDjpjOYn7g33SBvqg</parameter>
+	<parameter name="consumer_key" type="string"></parameter>
+	<parameter name="consumer_secret" type="string"></parameter>
+	<parameter name="user_token" type="string"></parameter>
+	<parameter name="user_secret" type="string"></parameter>
 </document>
