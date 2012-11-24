@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<parameter name="consumer_key" type="string"></parameter>
+	<parameter name="consumer_secret" type="string"></parameter>
+	<parameter name="user_token" type="string"></parameter>
+	<parameter name="user_secret" type="string"></parameter>
+</document>
