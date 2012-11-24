@@ -15,16 +15,30 @@ if(!empty($_POST)) {
 
 <h2>Panneau de configuration Autotweet</h2>
 
-<p>Le plugin a besoin de ces informations pour tweetter sur votre compte</p>
+<p>Le plugin a besoin des clés API de votre application Twitter. Si vous ne savez pas comment les récupérer, veuillez consulter la <a href="parametres_pluginhelp.php?p=autotweet">page d'aide</a>.</p>
 
 <form action="parametres_plugin.php?p=autotweet" method="post">
-    consumer_key : <input type="text" name="consumer_key" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('consumer_key')) ?>" /><br />
+    <fieldset class="config">
+        <p class="field">
+            <label>Consumer key : </label>
+        </p>
+        <input type="text" name="consumer_key" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('consumer_key')) ?>" /><br />
 
-    consumer_secret : <input type="text" name="consumer_secret" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('consumer_secret')) ?>" /><br />
+        <p class="field">
+            <label>Consumer secret : </label>
+        </p>
+        <input type="text" name="consumer_secret" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('consumer_secret')) ?>" /><br />
 
-    user_token : <input type="text" name="user_token" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('user_token')) ?>" /><br />
+        <p class="field">
+            <label>Access token : </label>
+        </p>
+        <input type="text" name="user_token" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('user_token')) ?>" /><br />
 
-    user_secret : <input type="text" name="user_secret" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('user_secret')) ?>" /><br />
+        <p class="field">
+            <label>Access token secret :</label>
+        </p>
+        <input type="text" name="user_secret" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('user_secret')) ?>" /><br />
+    </fieldset>
 
     <input type="submit" name="submit" value="Enregistrer" />
 </form>
