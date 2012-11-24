@@ -30,6 +30,7 @@ class autotweet extends plxPlugin {
         $url = plxAdmin::getInstance()->aConf['racine'] . $content['url'];
         $tag = explode(',', $content['tags']);
         foreach($tag as &$t) {
+            $t = plxUtils::removeAccents($t);
             $t = '#' . preg_replace('/[^a-zA-Z]/', '', $t);
         }
         $message = $content['title'] . ' ' . $url . ' ' . implode(' ', $tag);
