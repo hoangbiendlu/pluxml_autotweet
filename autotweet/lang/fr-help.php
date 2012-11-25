@@ -13,7 +13,7 @@
 <ul>
     <li>Allez sur le site <a href="https://dev.twitter.com/user/login">Twitter for developers</a> et connectez vous.</li>
     <li>Allez sur la page <a href="https://dev.twitter.com/apps">My applications</a> et créez une application. Remplissez seulement les champs obligatoires.</li>
-    <li>Une fois l'application créée, aller sur l'onglet "Settings", changez les accès en "Read and Write" et cliquez sur bouton en bas pour enregistrer.</li>
+    <li>Une fois l'application créée, allez sur l'onglet "Settings", changez les accès en "Read and Write" et cliquez sur bouton en bas pour enregistrer.</li>
     <li>Retournez sur le premier onglet "Details" et cliquez sur le bouton "Create my access token".</li>
     <li>Vous avez maintenant dans cet écran toutes les informations demandées pour paramétrer le plugin : Consumer key, Consumer secret, Access token et Access token secret.</li>
 </ul>
@@ -25,4 +25,4 @@
 
 <p>Le code source du plugin est disponible sur <a href="https://github.com/jibriss/pluxml_autotweet">Github</a>, veuillez vous assurer d'avoir la dernière version avant toute remontée de bug.</p>
 
-<p>Pour fonctionner ce plugin communique avec l'API Twitter grâce avec OAuth, en utilisant la bibliothèque <a href="https://github.com/themattharris/tmhOAuth">tmhOAuth</a>.</p>
+<p>Pour fonctionner ce plugin communique avec l'API Twitter avec le protocole OAuth, en utilisant la bibliothèque <a href="https://github.com/themattharris/tmhOAuth">tmhOAuth</a>.</p>
